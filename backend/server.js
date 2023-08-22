@@ -5,6 +5,7 @@ const mongoose  = require('mongoose');
 const userRoutes = require('./routes/users');
 const classRoutes = require('./routes/classes');
 const workoutRoutes = require('./routes/workout');
+const nutritionRoutes = require('./routes/nutrition');
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://13892:dorryInc041@cluster.mongodb.net/Cluster0?retryWrites=true&w=majority', {
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/classes', classRoutes);
 app.use('/api/workout', workoutRoutes);
+app.use('/api/nutrition', nutritionRoutes);
 
 // Routes
 app.get('/', (req, res) => {
